@@ -1,0 +1,67 @@
+---
+- name: Preflight - Fail if target host is not stable for this Role.
+  fail:
+    msg: "This role is not stable for the target operating system, {{ ansible_distribution }} {{ ansible_distribution_major_version }}."
+  when: (ansible_distribution is not defined) or
+        (ansible_distribution_version is not defined) or
+        (ansible_distribution+" "+ansible_distribution_major_version not in firewall_stable_os)
+
+- name: Populate service facts for several checks.
+  service_facts:
+
+- name: Ensure iptables is installed.
+  package:
+    name: iptables
+    state: present
+
+- name: Copy firewall script into place.
+  template:
+    src: firewall.bash.j2
+    dest: /etc/firewall.bash
+    owner: root
+    group: root
+    mode: 0744
+  notify: restart firewall
+
+- name: Copy firewall init script into place.
+  template:
+    src: firewall.init.j2
+    dest: /etc/init.d/firewall
+    owner: root
+    group: root
+    mode: 0755
+  when: "ansible_service_mgr != 'systemd'"
+
+- name: Copy firewall systemd unit file into place.
+  template:
+    src: firewall.unit.j2
+    dest: /etc/systemd/system/firewall.service
+    owner: root
+    group: root
+    mode: 0644
+  when: "ansible_service_mgr == 'systemd'"
+
+- name: Configure the firewall service.
+  service:
+    name: firewall
+    state: "{{ firewall_state }}"
+    enabled: "{{ firewall_enabled_at_boot }}"
+
+- name: Disable firewalld.
+  service:
+    name: firewalld
+    state: stopped
+    enabled: false
+  when: firewall_disable_firewalld and 'firewalld.service' in services
+
+- name: Disable ufw.
+  service:
+    name: ufw
+    state: stopped
+    enabled: false
+  when: firewall_disable_ufw and 'ufw.service' in services
+
+- name: Trigger restart of Fail2Ban if it is installed.
+  command: /bin/true
+  notify: restart fail2ban
+  when: "'fail2ban.service' in services"

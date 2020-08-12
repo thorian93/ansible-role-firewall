@@ -1,0 +1,35 @@
+---
+# Support for OSes:
+firewall_stable_os:
+  - Debian 9
+  - Debian 10
+  - Ubuntu 16
+  - Ubuntu 18
+  - CentOS 7
+  - CentOS 8
+  - Fedora 30
+  - Fedora 31
+  - openSUSE Leap 15
+  - openSUSE Leap 42  
+
+firewall_state: started
+firewall_enabled_at_boot: true
+
+firewall_allowed_tcp_ports: [22]
+firewall_allowed_udp_ports: []
+firewall_forwarded_tcp_ports: []
+  # - src: "2222"
+  #   dest: "22"
+  # - src: "8080"
+  #   dest: "80"
+firewall_forwarded_udp_ports: []
+  # - src: "5353"
+  #   dest: "53"
+firewall_custom_rules: []
+  # - "iptables -A INPUT -p tcp --dport 8080 -s 192.168.1.1 -j ACCEPT"
+firewall_ip6_custom_rules: []
+  # - "ip6tables -A INPUT -p tcp --dport 8080 -s ff02::fb -j ACCEPT"
+firewall_log_dropped_packets: true
+
+firewall_disable_firewalld: false
+firewall_disable_ufw: false
