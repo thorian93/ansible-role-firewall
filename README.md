@@ -1,6 +1,6 @@
 # Ansible Role: Firewall
 
-This role manages an iptables-based firewall on Debian/Ubuntu, RHEL/CentOS and Fedora and openSUSE servers.
+This role manages an iptables-based firewall on Debian/Ubuntu, RHEL/CentOS and Fedora and opensuse servers.
 
 ## Here be Dragons!
 
