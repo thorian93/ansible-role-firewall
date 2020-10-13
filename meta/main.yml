@@ -4,15 +4,22 @@ galaxy_info:
   description: Ansible Role Firewall
   license: "license (MIT)"
 
+  min_ansible_version: 2.5
+
+  galaxy_tags:
+    - linux
+    - server
+    - firewall
+
   platforms:
-    - name: CentOS
+    - name: EL
       versions:
       - 7
       - 8
     - name: Debian
       versions:
-      - 9
-      - 10
+      - Stretch
+      - Buster
     - name: Fedora
       versions:
       - 30
@@ -24,6 +31,6 @@ galaxy_info:
       - 42.2
     - name: Ubuntu
       versions:
-      - 16
-      - 18
-      - 20
+      - Xenial
+      - Bionic
+      - Focal
