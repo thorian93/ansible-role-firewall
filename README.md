@@ -1,5 +1,9 @@
 # Ansible Role: Firewall
 
+[![Ansible Role: Firewall](https://img.shields.io/ansible/role/51250?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_firewall)
+[![Ansible Role: Firewall](https://img.shields.io/ansible/quality/51250?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_firewall)
+[![Ansible Role: Firewall](https://img.shields.io/ansible/role/d/51250?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_firewall)
+
 This role manages an iptables-based firewall on Debian/Ubuntu, RHEL/CentOS and Fedora and opensuse servers.
 
 ## Here be Dragons!
@@ -77,7 +81,7 @@ None.
 
 This role ensures that it is not used against unsupported or untested operating systems by checking, if the right distribution name and major version number are present in a dedicated variable named like `<role-name>_stable_os`. You can find the variable in the role's default variable file at `defaults/main.yml`:
 
-    common_stable_os:
+    role_stable_os:
       - Debian 10
       - Ubuntu 18
       - CentOS 7
