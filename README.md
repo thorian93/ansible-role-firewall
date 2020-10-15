@@ -1,6 +1,6 @@
 # Ansible Role: Firewall
 
-This role manages an iptables-based firewall on Debian/Ubuntu, RHEL/CentOS and Fedora and opensuse servers.
+This role manages an iptables-based firewall on Debian/Ubuntu, RHEL/CentOS, Fedora and openSUSE servers.
 
 [![Ansible Role: Firewall](https://img.shields.io/ansible/role/51250?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_firewall)
 [![Ansible Role: Firewall](https://img.shields.io/ansible/quality/51250?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_firewall)
@@ -119,3 +119,5 @@ MIT
 ## Author Information
 
 This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
+It was adapted and and developed further in 2019 by [Thorian93](http://thorian93.de/).
