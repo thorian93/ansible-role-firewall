@@ -51,14 +51,14 @@
   service:
     name: firewalld
     state: stopped
-    enabled: false
+    enabled: 'false'
   when: firewall_disable_firewalld and 'firewalld.service' in services
 
 - name: Disable ufw.
   service:
     name: ufw
     state: stopped
-    enabled: false
+    enabled: 'false'
   when: firewall_disable_ufw and 'ufw.service' in services
 
 - name: Trigger restart of Fail2Ban if it is installed.

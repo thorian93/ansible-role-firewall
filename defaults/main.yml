@@ -14,7 +14,7 @@ firewall_stable_os:
   - Ubuntu 20
 
 firewall_state: started
-firewall_enabled_at_boot: true
+firewall_enabled_at_boot: 'true'
 
 firewall_allowed_tcp_ports: [22]
 firewall_allowed_udp_ports: []
@@ -30,7 +30,7 @@ firewall_custom_rules: []
 # - "iptables -A INPUT -p tcp --dport 8080 -s 192.168.1.1 -j ACCEPT"
 firewall_ip6_custom_rules: []
 # - "ip6tables -A INPUT -p tcp --dport 8080 -s ff02::fb -j ACCEPT"
-firewall_log_dropped_packets: true
+firewall_log_dropped_packets: 'true'
 
-firewall_disable_firewalld: false
-firewall_disable_ufw: false
+firewall_disable_firewalld: 'false'
+firewall_disable_ufw: 'false'
