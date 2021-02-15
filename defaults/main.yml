@@ -15,6 +15,7 @@ firewall_stable_os:
 
 firewall_state: started
 firewall_enabled_at_boot: 'true'
+firewall_flush: 'true'
 
 firewall_allowed_tcp_ports: [22]
 firewall_allowed_udp_ports: []

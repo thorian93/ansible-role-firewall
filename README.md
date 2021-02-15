@@ -32,6 +32,10 @@ Available variables are listed below, along with default values (see `defaults/m
 
 Start and enable the firewall at boot.
 
+    firewall_flush: 'true'
+
+Flush all non-managed rules on firewall start to have a clean state. Disable this only if you understand what you are doing!
+
     firewall_allowed_tcp_ports: [22]
 
 Open TCP Ports. This can be a single port a list of ports. Default is port 22 for SSH as it is needed for Ansible.
