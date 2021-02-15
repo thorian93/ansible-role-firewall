@@ -61,7 +61,13 @@
     enabled: 'false'
   when: firewall_disable_ufw and 'ufw.service' in services
 
-- name: Trigger restart of Fail2Ban if it is installed.
+- name: Trigger Restart of Services that set Firewall Rules to avoid errors.
   ansible.builtin.command: /bin/true
-  notify: restart fail2ban
-  when: "'fail2ban.service' in services"
+  notify: "restart {{ item }}"
+  changed_when: 'false'
+  failed_when: 'false'
+  when: firewall_auto_restart_services | bool
+  loop:
+    - fail2ban
+    - docker
+    - podman

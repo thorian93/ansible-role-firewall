@@ -8,3 +8,16 @@
   ansible.builtin.service:
     name: fail2ban
     state: restarted
+  when: "'fail2ban.service' in services"
+
+- name: restart docker
+  ansible.builtin.service:
+    name: docker
+    state: restarted
+  when: "'docker.service' in services"
+
+- name: restart podman
+  ansible.builtin.service:
+    name: podman
+    state: restarted
+  when: "'podman.service' in services"

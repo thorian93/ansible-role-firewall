@@ -34,3 +34,5 @@ firewall_log_dropped_packets: 'true'
 
 firewall_disable_firewalld: 'false'
 firewall_disable_ufw: 'false'
+
+firewall_auto_restart_services: 'false'

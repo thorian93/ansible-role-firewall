@@ -73,6 +73,10 @@ Log dropped packets to syslog. Messages will be prefixed with `Dropped by firewa
 
 Set to `true` to disable `firewalld` or `ufw` on RHEL and Ubuntu derivatives respectively.
 
+    firewall_auto_restart_services: 'false'
+
+Set to `true` to enable triggering depending services after rules are applied. See the handlers and the task for currently known services. Open an issue if you find additional services that can be useful here.
+
 ## Dependencies
 
 None.
