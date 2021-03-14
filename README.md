@@ -72,8 +72,8 @@ Add custom IPv6 rules to the firewall. The example allows access on port 8080 fr
 
 Log dropped packets to syslog. Messages will be prefixed with `Dropped by firewall: `.
 
-    firewall_disable_firewalld: false
-    firewall_disable_ufw: false
+    firewall_disable_firewalld: 'false'
+    firewall_disable_ufw: 'false'
 
 Set to `true` to disable `firewalld` or `ufw` on RHEL and Ubuntu derivatives respectively.
 
