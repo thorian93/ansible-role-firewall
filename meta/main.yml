@@ -1,7 +1,8 @@
 ---
 galaxy_info:
-  author: Thorian93
-  description: Ansible Role Firewall
+  role_name: firewall
+  author: thorian93
+  description: Firewall Management
   license: "license (MIT)"
 
   min_ansible_version: 2.9
@@ -25,6 +26,7 @@ galaxy_info:
         - 30
         - 31
         - 32
+        - 33
     - name: opensuse
       versions:
         - 15.2
