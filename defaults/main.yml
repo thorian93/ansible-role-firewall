@@ -8,6 +8,7 @@ firewall_stable_os:
   - Fedora 31
   - Fedora 32
   - Fedora 33
+  - Fedora 34
   - openSUSE Leap 15
   - openSUSE Leap 42
   - Ubuntu 16
@@ -38,3 +39,7 @@ firewall_disable_firewalld: 'false'
 firewall_disable_ufw: 'false'
 
 firewall_auto_restart_services: 'false'
+firewall_auto_restart_services_list:
+  - fail2ban
+  - docker
+  - podman

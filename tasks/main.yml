@@ -64,10 +64,6 @@
 - name: Trigger Restart of Services that set Firewall Rules to avoid errors.
   ansible.builtin.command: /bin/true
   notify: "restart {{ item }}"
-  changed_when: 'false'
   failed_when: 'false'
   when: firewall_auto_restart_services | bool
-  loop:
-    - fail2ban
-    - docker
-    - podman
+  loop: "{{ firewall_auto_restart_services_list }}"

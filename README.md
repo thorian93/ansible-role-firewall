@@ -79,7 +79,14 @@ Set to `true` to disable `firewalld` or `ufw` on RHEL and Ubuntu derivatives res
 
     firewall_auto_restart_services: 'false'
 
-Set to `true` to enable triggering depending services after rules are applied. See the handlers and the task for currently known services. Open an issue if you find additional services that can be useful here.
+Set to `true` to enable triggering depending services after rules are applied.
+
+    firewall_auto_restart_services_list:
+    - fail2ban
+    - docker
+    - podman
+
+The list of services that need to be restarted. See the handlers and the task for currently known services. Open an issue if you find additional services that can be useful here.
 
 ## Dependencies
 
